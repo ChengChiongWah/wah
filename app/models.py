@@ -1,8 +1,5 @@
-from flask.ext.sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
-from . import login_manager
-
-db = SQLAlchemy()
+from . import login_manager, db
 
 
 class Role(db.Model):
