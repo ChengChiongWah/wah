@@ -1,0 +1,8 @@
+127.0.0.1 - - [24/Sep/2015:08:12:04 +0800] "GET / HTTP/1.1" 200 4966 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0"
+127.0.0.1 - - [24/Sep/2015:08:12:04 +0800] "GET /static/blog.css HTTP/1.1" 200 - "http://localhost:8000/" "Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0"
+127.0.0.1 - - [24/Sep/2015:08:12:05 +0800] "GET /static/favicon.ico HTTP/1.1" 200 - "-" "Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0"
+127.0.0.1 - - [24/Sep/2015:08:12:07 +0800] "GET /auth/login HTTP/1.1" 200 6203 "http://localhost:8000/" "Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0"
+127.0.0.1 - - [24/Sep/2015:08:12:09 +0800] "GET /auth/register HTTP/1.1" 200 6342 "http://localhost:8000/auth/login" "Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0"
+127.0.0.1 - - [24/Sep/2015:08:12:18 +0800] "POST /auth/register HTTP/1.1" 302 229 "http://localhost:8000/auth/register" "Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0"
+127.0.0.1 - - [24/Sep/2015:08:12:18 +0800] "GET /auth/login HTTP/1.1" 200 6203 "http://localhost:8000/auth/register" "Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0"
+127.0.0.1 - - [24/Sep/2015:08:12:40 +0800] "POST /auth/login HTTP/1.1" 200 6210 "http://localhost:8000/auth/login" "Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0"
