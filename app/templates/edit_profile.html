@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+<html>
+  <head>
+    {% block head %}
+      {{ super() }}
+    {% endblock %}
+  </head>
+
+  <body>
+    {% block body %}
+    <div class="container">
+    {% block page_content %}
+      <div class="page-header"></div>
+      <div class="col-md-4">
+      {{ wtf.quick_form(form) }}
+      </div>
+    {% endblock %}
+    </div>
+    {{ super() }}
+    {% endblock %}
+  </body>
+</html>
