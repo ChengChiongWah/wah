@@ -1,6 +1,7 @@
-from wtforms import StringField, TextAreaField, SubmitField
-from wtforms.validators import Length
+from wtforms import StringField, TextAreaField, SubmitField, BooleanField, SelectField, TextAreaField, ValidationError
+from wtforms.validators import Length, Required, Email, Regexp
 from flask.ext.wtf import Form
+from ..models import Role
 
 class EditProfileForm(Form):
     name = StringField('Real name', validators=[Length(0, 64)])
@@ -17,7 +18,7 @@ class EditProfileAdminForm(Form):
     confirmed = BooleanField('Confirmed')
     role = SelectField('Role', coerce=int)
     name = StringField('Real name', validators=[Length(0, 64)])
-    location = StingField('Location', validators=[Length(0, 64)])
+    location = StringField('Location', validators=[Length(0, 64)])
     about_me = TextAreaField('About me')
     submit = SubmitField('Submit')
 

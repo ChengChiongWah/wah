@@ -3,8 +3,9 @@ from flask import render_template, flash, redirect, url_for
 from flask.ext.login import login_user, logout_user, login_required, current_user 
 from . import main
 from .. import db
-from .forms import EditProfileForm
+from .forms import EditProfileForm, EditProfileAdminForm
 from ..models import User
+from ..decorators import admin_required
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
@@ -59,5 +60,5 @@ def edit_profile_admin(id):
     form.location.data = user.location
     form.about_me.data = user.about_me
     db.session.commit()
-    return rneder_template('edit_profile.html', form=form, user=user)
+    return render_template('edit_profile.html', form=form, user=user)
 
