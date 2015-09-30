@@ -29,7 +29,7 @@ class EditProfileAdminForm(Form):
 	self.user = user
 
     def validate_email(self, field):
-        if field.date != self.user.email and \
+        if field.data != self.user.email and \
 	        User.query.filter_by(email=field.data).first():
             raise ValidationError('Email already registered.')
 

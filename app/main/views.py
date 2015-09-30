@@ -17,7 +17,8 @@ def index():
         db.session.add(post)
         db.session.commit()
     posts = Post.query.order_by(Post.timestamp.desc()).all()
-    return render_template('index.html', form=form, post=posts)
+    user = User.query.all()
+    return render_template('index.html', form=form, posts=posts, user=user)
 
 @main.route('/user/<username>')
 def user(username):
