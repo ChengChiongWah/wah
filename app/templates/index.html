@@ -4,6 +4,7 @@
 
 {% block body %}
 
+  <h1></h1>
   <div class="container">
     <div class="blog-header">
     <div>
@@ -16,21 +17,19 @@
       <div class="col-sm-8 blog-main">
       
         <div class="blog-post">
-	  <h1></h1>
 	  <div>
 	    {% if current_user.can(Permission.WRITE_ARTICLES) %}
 	    {{ wtf.quick_form(form) }}
 	    {% endif %}
 	  </div>
+	  <p></p>
 	  {% include '_posts.html' %}
 	  <div class="pagination">
 	    {{ macros.pagination_widget(pagination, '.index') }}
 	  </div>
 
-
         </div>
       </div>
-
       <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
         <div class="sidebar-module">
 	  <h4>Archives</h4>
@@ -42,7 +41,6 @@
 
     </div>
   </div>
-
   {{ super() }}
 {% endblock %}
 

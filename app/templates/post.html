@@ -1,5 +1,18 @@
 {% extends "base.html" %}
 
-{% block page_content %}
-  {% include '_posts.html' %}
+{% block body %}
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 blog-main">
+      
+      {% block page_content %}
+      <div class="page-header">
+        {% include '_posts.html' %}
+      </div>
+      {% endblock %}
+      
+      </div>
+    </div>
+  </div>
+  {{ super() }}
 {% endblock %}
