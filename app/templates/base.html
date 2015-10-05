@@ -12,6 +12,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../static/favicon.ico">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.js"></script>
 
     {% block title %}Blog Template for Bootstrap{% endblock %}
     <!-- Custom styles for this template -->
@@ -40,13 +42,13 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-	    <a class="navbar-brand" href="#">Project name</a>
+	    <a class="navbar-brand" href="#">PN</a>
 	  </div>
 	  <div id="navbar" class="navbar-collapse collapse">
 	    <ul class="nav navbar-nav">
 	      <li class="active"><a href="/">Home</a></li>
-	      <li><a href="#about">About</a></li>
-	      <li><a href="#contact">Contact</a></li>
+	      <li><a href="#about">A</a></li>
+	      <li><a href="#contact">C</a></li>
 	      <li> 
 	        <form class="navbar-form" role="search">
 		  <div class="form-group">
@@ -56,19 +58,18 @@
 		</form>
 	      </li>
 	      <ul class="nav navbar-nav navbar-right">
-		Hello,
 	        {% if current_user.is_authenticated() %}
-		  {{ current_user.username }}
-		<li><a href="{{ url_for('auth.logout') }}">Sign Out</a></li>
-		<li>
-		  <a href="{{ url_for('main.user', username=current_user.username) }}"> Profile
-		  </a>
+		<li class="dropdown">
+		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+		    aria-haspopup="true" aria-expanded="false">{{ current_user.username }}<span class=                    "caret"></span></a>
+		  <ul class="dropdown-menu">
+		    <li><a href="{{ url_for('main.user', username=current_user.username) }}">Profile</a></li>
+		    <li><a href="{{ url_for('auth.logout') }}">Sign Out</a></li>
+		  </ul>
 		</li>
 		{% else %}
-		  Stranger
 		<li><a href="{{ url_for('auth.login') }}">Sign In</a></li>
 		{% endif %}
-	      </ul>
 	      <li><a href="#">English</a></li>
 	    </ul>
 	  </div><!--/.nav-collapse -->

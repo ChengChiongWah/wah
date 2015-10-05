@@ -2,27 +2,21 @@
 {% import "bootstrap/wtf.html" as wtf %}
 
 {% block body %}
-{% block navbar %}
-  {{ super() }}
   <div class="container">
    <div class="row">
      <div class="col-sum-8 blog-main">
-       <div class="blog-post">
+       
+       {% block page_content %}
          <div class="page-header">
-	   <h1>Edit Post</h1>
-	 </div>
-	 <div>
+	   <h3>Edit Post</h3>
 	   {{ wtf.quick_form(form) }}
 	 </div>
-       </div>
-     </div>
-     <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-       <div class="sidebar-module">
-       </div>
+       {% endblock %}
+
      </div>
    </div>
   </div>
-{% endblock %}
+  {{ super() }}
 {% endblock %}
 
 {% block scripts %}
