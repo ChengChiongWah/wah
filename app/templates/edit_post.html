@@ -4,12 +4,14 @@
 {% block body %}
   <div class="container">
    <div class="row">
-     <div class="col-sum-8 blog-main">
+     <div class="col-sm-8 blog-main">
        
        {% block page_content %}
          <div class="page-header">
 	   <h3>Edit Post</h3>
-	   {{ wtf.quick_form(form) }}
+	   <div class="post-form">
+	     {{ wtf.quick_form(form) }}
+	   </div>
 	 </div>
        {% endblock %}
 
