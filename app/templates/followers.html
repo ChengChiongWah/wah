@@ -2,15 +2,14 @@
 {% import "_macros.html" as macros %}
 
 {% block body %}
+  {% block navbar %}
+    {{ super() }}
+  {% endblock %}
 
-    <br>
+  {% block content %}
     <div class="container">
-      <div class="row">
         <div class="col-sm-8 blog-main">
 
-    {% block page_content %}
-    <div class="page-header">
-    </div>
     <table class="table table-hover followers">
       <thead><tr><th>User</th><th>Since</th></tr></thead>
       {% for follow in follows %}
@@ -28,12 +27,18 @@
     <div class="pagination">
       {{ macros.pagination_widget(pagination, endpoint, username=user.username) }}
     </div>
-    {% endblock %}
 
         </div>
-      </div>
     </div>
+    {% endblock content %} <!-- block content -->
+
+    {% block foot %}
+      {{ super() }}
+    {% endblock %}
+
+    {% block scripts %}
+      {{ super() }}
+    {% endblock %}
    
-  {{ super() }}
 {% endblock %}
 

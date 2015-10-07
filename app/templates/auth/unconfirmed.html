@@ -1,14 +1,11 @@
 {% extends "base.html" %}
-<html>
-  <head>
-    {% block head %}
-      {{ super() }}
-    {% endblock %}
-  </head>
-  
-  <body>
-    {% block body %}
-      {% block page_content %} 
+
+{% block body %}
+  {% block navbar %}
+    {{ super() }}
+  {% endblock %}
+
+  {% block content %} 
       <div class="page-header">
         <h1>
           Hello, {{ current_user.username }}!
@@ -23,8 +20,14 @@
         <a href="{{ url_for('auth.resend_confirmation') }}">Click here</a>
         </p>
       </div>
-    {% endblock %}
-  {{ super() }}
   {% endblock %}
-</body>
-</html>
+  
+  {% block foot %}
+    {{ super() }}
+  {% endblock %}
+
+  {% block script %}
+    {{ super() }}
+  {% endblock %}
+
+{% endblock %}

@@ -3,48 +3,50 @@
 {% import "_macros.html" as macros %}
 
 {% block body %}
+ 
+  {% block navbar %}
+    {{ super() }}
+  {% endblock %}
 
+  {% block content %}
   <h1></h1>
   <div class="container">
-    <div class="blog-header">
-    <div>
-
     <div class="row">
-    </div>
-
-    <div class="row">
-      
       <div class="col-sm-8 blog-main">
       
         <div class="blog-post">
-	  <div>
 	    {% if current_user.can(Permission.WRITE_ARTICLES) %}
+	    <div class="post-form">
 	    {{ wtf.quick_form(form) }}
+	    </div>
 	    {% endif %}
-	  </div>
 	  <p></p>
-	  {% include '_posts.html' %}
+	  <p>{% include '_posts.html' %}</P>
 	  <div class="pagination">
 	    {{ macros.pagination_widget(pagination, '.index') }}
-	  </div>
+	  </div><!-- pagination -->
 
-        </div>
-      </div>
+        </div><!-- blog-post -->
+      </div><!-- blog-main-->
+      
       <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
         <div class="sidebar-module">
-	  <h4>Archives</h4>
-	  <ol class="list-unstyled">
-	    <li><a href="#">test</a></li>
-	  </ol>
+	  <img class="img-circle" src="../static/favico.ico" >
 	</div>
-      </div><!-- /.blog-sidebar -->
+      </div><!-- /.blog-sidebar --> 
 
     </div>
   </div>
-  {{ super() }}
-{% endblock %}
+  {% endblock %}<!-- block content -->
+  
+  {% block foot %}
+    {{ super() }}
+  {% endblock %}
 
-{% block scripts %}
-  {{ super() }}
-  {{ pagedown.include_pagedown() }}
-{% endblock %}
+
+  {% block scripts %}
+    {{ super() }}
+    {{ pagedown.include_pagedown() }}
+  {% endblock %}
+
+{% endblock %} <!-- block body -->

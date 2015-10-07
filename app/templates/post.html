@@ -3,12 +3,15 @@
 {% import "_macros.html" as macros %}
 
 {% block body %}
+  {% block navbar %}
+    {{ super() }}
+  {% endblock %}
+
+  {% block content %}
   <div class="container">
     <div class="row">
       <div class="col-sm-8 blog-main">
       
-      {% block page_content %}
-      <div class="page-header">
         {% include '_posts.html' %}
 	<h4 id="comments">Comments</h4>
 	  {% if current_user.can(Permission.COMMENT) %}
@@ -23,11 +26,17 @@
 	  {{ macros.pagination_widget(pagination, '.post', fragment='#comments', id=posts[0].id) }}
           </div>
 	{% endif %}  
-      </div>
-      {% endblock %}
       
       </div>
     </div>
   </div>
-  {{ super() }}
+  {% endblock %}
+
+  {% block foot %}
+    {{ super() }}
+  {% endblock %}
+  
+  {% block scripts %}
+    {{ super() }}
+  {% endblock %}
 {% endblock %}
