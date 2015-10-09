@@ -15,6 +15,7 @@ class Config:
     FLASKY_POSTS_PER_PAGE = 25
     FLASKY_FOLLOWERS_PER_PAGE = 25
     FLASKY_COMMENTS_PER_PAGE = 25
+#    WHOOSH_BASE = os.path.join(basedir, 'search.db')
 
     @staticmethod
     def init_app(app):
