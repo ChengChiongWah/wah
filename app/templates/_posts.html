@@ -3,7 +3,7 @@
   <li class="post">
     <div class="post-body">
       {% if post.body_html %}
-        {{ post.body_html | safe }}
+        {{ post.body_html|safe }}
       {% else %}
         {{ post.body }}
       {% endif %}
