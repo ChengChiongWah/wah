@@ -1,30 +1,32 @@
  {% extends "base.html" %}
  {% import "bootstrap/wtf.html" as wtf %}
- <html>
-   <head>
-     {% block head %}
-       {{ super() }}
-     {% endblock %}
-   </head>
 
-   <body>
-     {% block body %}
+{% block body %}
+  {% block navbar %}
+    {{ super() }}
+  {% endblock %}
+     
+  {% block content %}
      <div class="container">
-     {% block page_content %}
-       <div class="page-header"></div>
        <div class="col-md-4">
        {{ wtf.quick_form(form) }}
        <h1></h1>
        <p>
-         New user?
 	 <a href="{{ url_for('auth.register') }}">
-	   Click here to register
+	  Get a New Username 
 	 </a>
+	<div class="line"></div>
+	 Sign in with one of the following
        </p>
        </div>
-     {% endblock %}
      </div>
+   {% endblock %}
+
+   {% block foot %}
      {{ super() }}
-     {% endblock %}
-   </body>
-</html>
+   {% endblock %}
+
+   {% block scripts %}
+     {{ super() }}
+   {% endblock %}
+{% endblock %}

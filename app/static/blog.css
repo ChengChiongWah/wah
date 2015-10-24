@@ -4,6 +4,7 @@
 
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
+  padding-top: 60px;
   color: #555;
 }
 
@@ -164,3 +165,16 @@ h6, .h6 {
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
+
+/*Adder later by the author */
+.post-date {
+ float: right
+ }
+
+.comment-date {
+float:right
+ }
+
+ .line {
+ border-bottom:1px solid #e5e5e5 
+ }
